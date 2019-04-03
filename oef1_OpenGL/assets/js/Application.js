@@ -20,6 +20,7 @@ export default class Application {
         this.preloader()
     }
 
+    /** methode to load glsl shaders     */
     async preloader() {
         console.info('Preloading source code for shaders')
         await fetch('./assets/glsl/vertex-shader.glsl')
@@ -33,9 +34,10 @@ export default class Application {
         this.run()
     }
 
+    /** methode to draw Canvas     */
     run() {
-        const width = 600
-        const height = 480
+        const width = 800
+        const height = 600
 
         new Canvas(width, height, this.shaderSources)
     }
